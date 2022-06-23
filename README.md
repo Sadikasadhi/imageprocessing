@@ -15,8 +15,9 @@ import matplotlib.image as mping <br>
 import matplotlib.pyplot as plt <br>
 img=mping.imread('rose2.jpg') <br>
 plt.imshow(img) <br>
-<matplotlib.image.AxesImage at 0x1c8baf5e910> <br>
-
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/175273562-5e5c9e46-c75a-424f-9831-ced1e9dc57bf.png)
+<br>
 Develop the program to change the image to different color spaces
 <br>
 
