@@ -93,7 +93,25 @@ size: (259, 194)<br>
 Width: 259<br>
 Height: 194<br>
 
-8.Convert the original image to gray scale and then to binary.
+8.Convert the original image to gray scale and then to binary.<br>
+import cv2<br>
+img=cv2.imread('flower8.jpg')<br>
+cv2.imshow("RGB",img)<br>
+cv2.waitKey(0)<br>
+
+img=cv2.imread('flower8.jpg',0)<br>
+cv2.imshow("Gray",img)<br>
+cv2.waitKey(0)<br>
+
+ret,bw_img=cv2.threshold(img,127,255,cv2.THRESH_BINARY)<br>
+cv2.imshow("Binary",bw_img)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/175286167-3b9163ce-5da6-4d79-a5ce-bb0f45ba0194.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175286247-9f2aae70-3c27-4cff-99aa-7d10ff68cc00.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175286326-f094c78c-7324-4b62-a580-c3a423a193fb.png)<br>
 
 
 9.Resize the original image<br>
@@ -112,6 +130,49 @@ OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/175284242-e0f0835d-e45b-414e-84c9-ece1d5ba5e72.png)<br>
 ![image](https://user-images.githubusercontent.com/97940468/175284048-d800dc17-2246-4548-851a-ac4e893ddd71.png)<br>
 ![image](https://user-images.githubusercontent.com/97940468/175284124-9a6f913a-fe6a-430a-9e90-acfcdec884fb.png)<br>
+
+10.Develop a program to readimage using URL.<br>
+from skimage import io<br>
+import matplotlib.pyplot as plt<br>
+url='https://static.scientificamerican.com/sciam/cache/file/7A715AD8-449D-4B5A-ABA2C5D92D9B5A21_source.png'<br>
+image=io.imread(url)<br>
+plt.imshow(image)<br>
+plt.show()<br>
+
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/175286697-288a374c-1ce3-42eb-b46d-dd8b7af57655.png)<br>
+
+11.Write a program to mask and blur the image.<br>
+
+import cv2<br>
+import matplotlib.image as mpimg<br>
+import matplotlib.pyplot as plt<br>
+img=mpimg.imread('fish3.jpg')<br>
+plt.imshow(img)<br>
+plt.show<br>
+
+![image](https://user-images.githubusercontent.com/97940468/175287049-e73ac905-438d-4e09-be74-0b294e4a5537.png)<br>
+
+hsv_img = cv2.cvtColor(img,cv2.COLOR_RGB2HSV)<br>
+light_red=(0,50,50)<br>
+dark_red=(10,255,255) <br>
+mask_red=cv2.inRange(hsv_img,light_red,dark_red)<br>
+result_red=cv2.bitwise_and(img,img,mask=mask_red)<br>
+plt.subplot(1,2,1) <br>
+plt.imshow(mask_red,cmap="gray")<br>
+plt.subplot(1,2,2) <br>
+plt.imshow(result_red) <br>
+plt.show()<br>
+
+![image](https://user-images.githubusercontent.com/97940468/175287148-f56dd729-715e-44ac-b69a-1fba8f8ea721.png)<br>
+
+blur = cv2.GaussianBlur(result_red,(7,7),0)<br>
+plt.imshow(blur)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97940468/175287229-ba480cfd-881a-4966-b366-8a7b2b682b44.png)<br>
+
+
+
 
 
 
