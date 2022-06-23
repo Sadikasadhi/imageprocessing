@@ -171,50 +171,83 @@ plt.imshow(blur)<br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97940468/175287229-ba480cfd-881a-4966-b366-8a7b2b682b44.png)<br>
 
+12.Write a program to perform arithmatic operations on images<br>
 
+import cv2<br>
+import matplotlib.image as mpimg<br>
+import matplotlib.pyplot as plt<br>
 
+img1=cv2.imread('img1.jpg')<br>
+img2=cv2.imread('img2.jpg')<br>
 
+fimg1=img1 + img2<br>
+plt.imshow(fimg1)<br>
+plt.show()<br>
 
+cv2.imwrite('output.jpg',fimg1)<br>
+fimg2=img1 - img2<br>
+plt.imshow(fimg2)<br>
+plt.show()<br>
 
+cv2.imwrite('output.jpg',fimg2)<br>
+fimg3=img1 * img2<br>
+plt.imshow(fimg3)<br>
+plt.show()<br>
 
+cv2.imwrite('output.jpg',fimg3)<br>
+fimg4=img1 / img2<br>
+plt.imshow(fimg4)<br>
+plt.show()<br>
 
+cv2.imwrite('output.jpg',fimg4)<br>
 
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/175287926-9c06ab99-d986-40fd-a2b3-94a9d2b13a4a.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175287982-07c3ef5d-9c04-4f61-ba4b-2e5ee01ec9e2.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175288054-58d7fb6e-d2a5-4f00-a704-f3e7011d9c4f.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175288101-d0c21143-2e9d-4e7c-8eff-353710cf0e73.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175288148-b4243125-9a61-401a-916d-7d995752aaaf.png)<br>
 
+13.Develop the program to change the image to different color spaces.<br>
+import cv2 <br>
+img=cv2.imread("D:\Sadika\\b5.jpg")<br>
+gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)<br>
+hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)<br>
+lab=cv2.cvtColor(img,cv2.COLOR_BGR2LAB)<br>
+hls=cv2.cvtColor(img,cv2.COLOR_BGR2HLS)<br>
+yuv=cv2.cvtColor(img,cv2.COLOR_BGR2YUV)<br>
+cv2.imshow("GRAY image",gray)<br>
+cv2.imshow("HSV image",hsv)<br>
+cv2.imshow("LAB image",lab)<br>
+cv2.imshow("HLS image",hls)<br>
+cv2.imshow("YUV image",yuv)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/175288389-fe57e341-f802-4453-99ec-996a7d886b7d.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175288477-7e029aa7-e0bf-43c9-a6d6-d3f7f87aeb5f.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175288574-8676aa50-e3c3-4fdb-b00e-281a2602b6ea.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175288636-05a3c4ef-da1f-400e-9d9d-15dfca545267.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175288711-b4ba5977-c638-4d0f-8902-aabbaa4f9f6f.png)<br>
 
+14.Program to create an image using 2D array<br>
+import cv2 as c<br>
+import numpy as np<br>
+from PIL import Image<br>
+array=np.zeros([100,200,3],dtype=np.uint8)<br>
+array[:,:100]=[255,130,0]<br>
+array[:,100:]=[0,0,255]<br>
+img=Image.fromarray(array)<br>
+img.save('IMAGES.jpg')<br>
+img.show()<br>
+c.waitKey(0)<br>
 
-
-
-
-
-
-
-
-
-Develop the program to change the image to different color spaces
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/175289149-fdb3cf89-0c28-4a95-9ab5-914b202f0f3c.png)
 <br>
 
-import cv2 
-img=cv2.imread("D:\Sadika\\b5.jpg")
-gray=cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
-hsv=cv2.cvtColor(img,cv2.COLOR_BGR2HSV)
-lab=cv2.cvtColor(img,cv2.COLOR_BGR2LAB)
-hls=cv2.cvtColor(img,cv2.COLOR_BGR2HLS)
-yuv=cv2.cvtColor(img,cv2.COLOR_BGR2YUV)
-cv2.imshow("GRAY image",gray)
-cv2.imshow("HSV image",hsv)
-cv2.imshow("LAB image",lab)
-cv2.imshow("HLS image",hls)
-cv2.imshow("YUV image",yuv)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-
-<br>
-OUTPUT:
-<br>
-![image](https://user-images.githubusercontent.com/97940468/175271468-3b8c4b20-b1d4-4078-8bef-cf8f31661187.png)
 
 
-<br>
 
 
 
