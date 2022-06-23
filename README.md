@@ -1,15 +1,4 @@
 # imageprocessing
-#Python program to explain cv2.imshow() method.
-import cv2 
-path='BUTTERFLY3.jpg'
-i=cv2.imread(path,1)
-cv2.imshow('image',i)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
-OUTPUT:
-![173816997-24596b5d-4e42-46bb-855d-6d5be00da6ca](https://user-images.githubusercontent.com/97940468/175274824-36b4657f-058c-43a1-b392-30875656f3b4.png)
-
-
 
 1.Develop a program to display grayscale image using read and Write Operations.
 <br>
@@ -21,7 +10,7 @@ cv2.destroyAllWindows()<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/175270926-d16f09bc-6f52-4e13-8315-2f468bbe937d.png)
 <br>
-
+2.Develop a program to display the image using matplotlib.<br>
 import matplotlib.image as mping <br>
 import matplotlib.pyplot as plt <br>
 img=mping.imread('rose2.jpg') <br>
@@ -29,6 +18,9 @@ plt.imshow(img) <br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/175273562-5e5c9e46-c75a-424f-9831-ced1e9dc57bf.png)
 <br>
+3.Develop a program to perform linear transformation.
+  Rotation<br>
+  Scalling<br>
 Develop the program to change the image to different color spaces
 <br>
 
