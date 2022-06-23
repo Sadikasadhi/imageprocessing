@@ -73,6 +73,45 @@ OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/175283186-7b30852a-5485-465f-a252-c3f71be403bb.png)<br>
 ![image](https://user-images.githubusercontent.com/97940468/175283262-28553f7f-dbd8-4948-99ff-72743aacf5e1.png)<br>
 
+7.Write a program to display the image attributes.<br>
+
+from PIL import Image<br>
+image=Image.open('plant4.jpg')<br>
+print("Filename:",image.filename)<br>
+print("Format:",image.format)<br>
+print("Mode:",image.mode)<br>
+print("size:",image.size)<br>
+print("Width:",image.width)<br>
+print("Height:",image.height)<br>
+image.close()<br>
+
+OUTPUT:<br>
+Filename: plant4.jpg<br>
+Format: JPEG<br>
+Mode: RGB<br>
+size: (259, 194)<br>
+Width: 259<br>
+Height: 194<br>
+
+8.Convert the original image to gray scale and then to binary.
+
+
+9.Resize the original image<br>
+import cv2<br>
+img=cv2.imread('b1.jpg')<br>
+print('original image length width',img.shape)<br>
+cv2.imshow('original image',img)<br>
+cv2.waitKey(0)<br>
+
+imgresize=cv2.resize(img,(150,160))<br>
+cv2.imshow('Resized image',imgresize)<br>
+print('Resized image length,width',imgresize.shape)<br>
+cv2.waitKey(0)<br>
+
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/175284242-e0f0835d-e45b-414e-84c9-ece1d5ba5e72.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175284048-d800dc17-2246-4548-851a-ac4e893ddd71.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/175284124-9a6f913a-fe6a-430a-9e90-acfcdec884fb.png)<br>
 
 
 
