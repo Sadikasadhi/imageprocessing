@@ -21,6 +21,16 @@ OUTPUT:<br>
 3.Develop a program to perform linear transformation.
   Rotation<br>
   Scalling<br>
+import cv2<br>
+from PIL import Image<br>
+img=Image.open('leaf1.jpg')<br>
+img=img.rotate(180)<br>
+img.show()<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+OUTPUT:<br>  
+  ![image](https://user-images.githubusercontent.com/97940468/175281528-ae192b0c-596f-4194-942d-1dc6c92e8366.png)
+<br>
 Develop the program to change the image to different color spaces
 <br>
 
