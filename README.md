@@ -10,6 +10,13 @@ cv2.destroyAllWindows()<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/175270926-d16f09bc-6f52-4e13-8315-2f468bbe937d.png)
 <br>
+
+import matplotlib.image as mping <br>
+import matplotlib.pyplot as plt <br>
+img=mping.imread('rose2.jpg')<br>
+plt.imshow(img)<br>
+<matplotlib.image.AxesImage at 0x1c8baf5e910>
+
 Develop the program to change the image to different color spaces
 <br>
 
