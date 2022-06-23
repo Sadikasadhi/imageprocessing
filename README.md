@@ -1,5 +1,10 @@
 # imageprocessing
 
+1.Develop a program to display grayscale image using read and Write Operations.
+<br>
+OUTPUT:
+![image](https://user-images.githubusercontent.com/97940468/175270926-d16f09bc-6f52-4e13-8315-2f468bbe937d.png)
+
 <br>
 Develop the program to change the image to different color spaces
 <br>
