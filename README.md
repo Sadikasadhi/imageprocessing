@@ -2,9 +2,13 @@
 
 1.Develop a program to display grayscale image using read and Write Operations.
 <br>
-OUTPUT:
+import cv2
+img=cv2.imread('flower4.jpg',0)
+cv2.imshow('image',img)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/175270926-d16f09bc-6f52-4e13-8315-2f468bbe937d.png)
-
 <br>
 Develop the program to change the image to different color spaces
 <br>
