@@ -1,14 +1,16 @@
 # imageprocessing
 #Python program to explain cv2.imshow() method.
-import cv2
+import cv2 
 path='BUTTERFLY3.jpg'
 i=cv2.imread(path,1)
 cv2.imshow('image',i)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
-
 OUTPUT:
-image
+![173816997-24596b5d-4e42-46bb-855d-6d5be00da6ca](https://user-images.githubusercontent.com/97940468/175274824-36b4657f-058c-43a1-b392-30875656f3b4.png)
+
+
+
 1.Develop a program to display grayscale image using read and Write Operations.
 <br>
 import cv2 <br>
