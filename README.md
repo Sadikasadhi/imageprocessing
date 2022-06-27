@@ -19,8 +19,8 @@ OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/175273562-5e5c9e46-c75a-424f-9831-ced1e9dc57bf.png)
 <br>
 3.Develop a program to perform linear transformation.<br>
-  Rotation<br>
-  Scalling<br>
+  i)Rotation<br>
+  ii)Scalling<br>
 import cv2<br>
 from PIL import Image<br>
 img=Image.open('leaf1.jpg')<br>
