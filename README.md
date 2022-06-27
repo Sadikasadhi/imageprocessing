@@ -39,7 +39,7 @@ img1=ImageColor.getrgb("yellow")<br>
 print(img1)<br>
 img2=ImageColor.getrgb("red")<br>
 print(img2)<br>
-img1=ImageColor.getrgb("pink")<br>
+img3=ImageColor.getrgb("pink")<br>
 print(img3)<br>
 OUTPUT:<br>
 (255, 255, 0)<br>
