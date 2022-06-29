@@ -295,6 +295,129 @@ OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/175289149-fdb3cf89-0c28-4a95-9ab5-914b202f0f3c.png)
 <br>
 
+15.Bitwise operation<br>
+
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+image1=cv2.imread('img1.jpg',1)<br>
+image2=cv2.imread('img1.jpg')<br>
+ax=plt.subplots(figsize=(15,10))<br>
+bitwiseAnd=cv2.bitwise_and(image1,image2)<br>
+bitwiseOr=cv2.bitwise_or(image1,image2)<br>
+bitwiseXor=cv2.bitwise_xor(image1,image2)<br>
+bitwiseNot_img1=cv2.bitwise_not(image1)<br>
+bitwiseNot_img2=cv2.bitwise_not(image2)<br>
+plt.subplot(151)<br>
+plt.imshow(bitwiseAnd)<br>
+plt.subplot(152)<br>
+plt.imshow(bitwiseOr)<br>
+plt.subplot(153)<br>
+plt.imshow(bitwiseXor)<br>
+plt.subplot(154)<br>
+plt.imshow(bitwiseNot_img1)<br>
+plt.subplot(155)<br>
+plt.imshow(bitwiseNot_img2)<br>
+cv2.waitKey(0)<br>
+
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/176419008-19206b9b-a161-431d-9ce5-1c88c18e797b.png)<br>
+
+16.Blurring image<br>
+#importing libraries<br>
+import cv2<br>
+import numpy as np<br>
+
+image=cv2.imread('b7.jpg')<br>
+
+cv2.imshow('Original Image',image)<br>
+cv2.waitKey(0)<br>
+
+#Gaussian Blur<br>
+Gaussian=cv2.GaussianBlur(image,(7,7),0)<br>
+cv2.imshow('Gaussian Blurring', Gaussian)<br>
+cv2.waitKey(0)<br>
+
+#Median Blur<br>
+median=cv2.medianBlur(image,5)<br>
+cv2.imshow('Median Blurring' ,median)<br>
+cv2.waitKey(0)<br>
+
+#Bilateral Blur<br>
+bilateral=cv2.bilateralFilter(image,9,75,75)<br>
+cv2.imshow('Bilateral Blurring', bilateral)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/176420151-9f7928c9-60ca-4526-8120-bb04cff1ef5e.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/176420227-a9dfe559-061c-4534-a65f-5bfcb96bd742.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/176420312-3aeb1a7d-dc64-4ab3-b196-b68338cebc67.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/176420403-c19ed3e8-c9eb-4e61-a259-d82ee11414dc.png)<br>
+
+17.Image Enhancement<br>
+from PIL import Image<br>
+from PIL import ImageEnhance<br>
+image=Image.open('b3.jpg')<br>
+image.show()<br>
+enh_bri=ImageEnhance.Brightness(image)<br>
+brightness=1.5<br>
+image_brightened=enh_bri.enhance(brightness)<br>
+image_brightened.show()<br>
+
+enh_col=ImageEnhance.Color(image)<br>
+color=1.5<br>
+image_colored=enh_col.enhance(color)<br>
+image_colored.show()<br>
+
+enh_con=ImageEnhance.Contrast(image)<br>
+contrast=1.5<br>
+image_contrasted=enh_con.enhance(contrast)<br>
+image_contrasted.show()<br>
+
+enh_sha=ImageEnhance.Sharpness(image)<br>
+sharpness=1.5<br>
+image_sharped=enh_sha.enhance(sharpness)<br>
+image_sharped.show()<br>
+
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/176421932-cd752748-2da1-4b34-a373-b8d56a20e41d.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/176422016-69116b56-d65d-4527-a249-a3981cd0b9dc.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/176422099-b9e724b6-db0c-49df-8bfd-5406447f95a1.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/176422146-e4dc626f-dd73-4d76-bc54-18d2e786a19e.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/176422212-8439e466-fc9d-41fa-b526-f3c753eeabfb.png)<br>
+
+18.Morpholigical operation<br>
+import cv2<br>
+import numpy as np<br>
+from  matplotlib import pyplot as plt<br>
+from PIL import  Image,ImageEnhance<br>
+img=cv2.imread('b2.jpg',0)<br>
+ax=plt.subplots(figsize=(15,10))<br>
+kernel=np.ones((5,5),np.uint8)<br>
+opening=cv2.morphologyEx(img,cv2.MORPH_OPEN,kernel)<br>
+closing=cv2.morphologyEx(img,cv2.MORPH_CLOSE,kernel)<br>
+erosion=cv2.erode(img,kernel,iterations=1)<br>
+dilation=cv2.dilate(img,kernel,iterations=1)<br>
+gradient=cv2.morphologyEx(img,cv2.MORPH_GRADIENT,kernel)<br>
+plt.subplot(151)<br>
+plt.imshow(opening)<br>
+plt.subplot(152)
+plt.imshow(closing)<br>
+plt.subplot(153)<br>
+plt.imshow(erosion)<br>
+plt.subplot(154)<br>
+plt.imshow(dilation)<br>
+plt.subplot(155)<br>
+plt.imshow(gradient)<br>
+cv2.waitKey(0)<br>
+
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/176422537-45e6c945-f524-43fd-a476-0a850bdf1131.png)<br>
+
+
+
+
+
 
 
 
