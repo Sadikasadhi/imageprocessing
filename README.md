@@ -171,6 +171,55 @@ plt.imshow(blur)<br>
 plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97940468/175287229-ba480cfd-881a-4966-b366-8a7b2b682b44.png)<br>
 
+import cv2<br>
+import matplotlib.image as mpimg<br>
+import matplotlib.pyplot as plt<br>
+img=mpimg.imread('fish1.jpg')<br>
+plt.imshow(img)<br>
+plt.show<br>
+
+![image](https://user-images.githubusercontent.com/97940468/176416594-caaaec6e-9201-4d73-917c-f34d19c5e607.png)<br>
+
+hsv_img=cv2.cvtColor(img,cv2.COLOR_RGB2HSV)<br>
+light_orange=(1, 190, 200)<br>
+dark_orange=(18, 255, 255)<br>
+mask=cv2.inRange(hsv_img,light_orange,dark_orange)<br>
+result=cv2.bitwise_and(img,img,mask=mask)<br>
+plt.subplot(1,2,1)<br>
+plt.imshow(mask,cmap="gray")<br>
+plt.subplot(1,2,2)<br>
+plt.imshow(result)<br>
+plt.show()<br>
+
+![image](https://user-images.githubusercontent.com/97940468/176416791-791b03e0-da40-41ab-b044-598d1e66ffe4.png)<br>
+
+light_white=(0,0,200)<br>
+dark_white=(145,60,255)<br>
+mask_white=cv2.inRange(hsv_img,light_white,dark_white)<br>
+result_white=cv2.bitwise_and(img,img,mask=mask_white)<br>
+plt.subplot(1,2,1)<br>
+plt.imshow(mask_white,cmap="gray")<br>
+plt.subplot(1,2,2)<br>
+plt.imshow(result_white)<br>
+plt.show()<br>
+
+![image](https://user-images.githubusercontent.com/97940468/176417006-9b1f7165-9283-4a6a-abc8-1409253b673f.png)<br>
+
+
+final_mask=mask+mask_white<br>
+final_result=cv2.bitwise_and(img,img,mask=final_mask)<br>
+plt.subplot(1,2,1)<br>
+plt.imshow(final_mask,cmap="gray")<br>
+plt.subplot(1,2,2)<br>
+plt.imshow(final_result)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97940468/176417318-049d8929-cc68-4b45-a3d0-2f3cfc88796b.png)<br>
+
+blur=cv2.GaussianBlur(final_result, (7,7), 0)<br>
+plt.imshow(blur)<br>
+plt.show()<br>
+![image](https://user-images.githubusercontent.com/97940468/176417476-f22f4164-c72c-48f1-9d95-8c0b70bdee8e.png)<br>
+
 12.Write a program to perform arithmatic operations on images<br>
 
 import cv2<br>
