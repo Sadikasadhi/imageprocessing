@@ -414,10 +414,68 @@ cv2.waitKey(0)<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/176422537-45e6c945-f524-43fd-a476-0a850bdf1131.png)<br>
 
+19.Develop a program to<br>
+    i)Read the image,convert it into grayscale image<br>
+    ii)Write(save) the grayscale image and<br>
+    iii)Display the original image and grayscale image<br>
 
+import cv2<br>
+OriginalImg=cv2.imread('c1.jpg')<br>
+GrayImg=cv2.imread('c1.jpg',0)<br>
+isSaved=cv2.imwrite('C:\Sadika\img2.jpg',GrayImg)<br>
+cv2.imshow('Display original Image',OriginalImg)<br>
+cv2.imshow('Display Grayscale Image',GrayImg)<br>
+cv2.waitKey(0)<br>
+cv2.destroyAllWindows()<br>
+if isSaved:<br>
+    print('The image is successfully saved!')<br>
 
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/178709732-6e51e3cf-fb33-488a-ae7c-96c3320c103e.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/178709797-e92a06d2-f711-4f1d-a2d7-08fd2a65bda9.png)<br>
 
+20.Slicing with background<br>
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('c2.jpg',0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+            z[i][j]=255<br>
+        else:<br>
+            z[i][j]=image[i][j]<br>
+equ=np.hstack((image,z))<br>
+plt.title('Graylevel slicing with background')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
 
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/178711799-4a52d336-dc84-4bef-a33f-97dbd80dae4e.png)<br>
+
+21.Slicing without background<br>
+
+import cv2<br>
+import numpy as np<br>
+from matplotlib import pyplot as plt<br>
+image=cv2.imread('c2.jpg',0)<br>
+x,y=image.shape<br>
+z=np.zeros((x,y))<br>
+for i in range(0,x):<br>
+    for j in range(0,y):<br>
+        if(image[i][j]>50 and image[i][j]<150):<br>
+            z[i][j]=255<br>
+        else:<br>
+            z[i][j]=0<br>
+equ=np.hstack((image,z))<br>
+plt.title('Graylevel slicing without background')<br>
+plt.imshow(equ,'gray')<br>
+plt.show()<br>
+
+OUTPUT:<br>
+![image](https://user-images.githubusercontent.com/97940468/178712077-d0c20b0d-3838-40ab-8b50-cba46fabc6e8.png)<br>
 
 
 
