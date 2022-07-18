@@ -1,6 +1,6 @@
 # imageprocessing
 
-1.Develop a program to display grayscale image using read and Write Operations.
+**1.Develop a program to display grayscale image using read and Write Operations.**
 <br>
 import cv2 <br>
 img=cv2.imread('flower4.jpg',0) <br>
@@ -10,7 +10,7 @@ cv2.destroyAllWindows()<br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/175270926-d16f09bc-6f52-4e13-8315-2f468bbe937d.png)
 <br>
-2.Develop a program to display the image using matplotlib.<br>
+**2.Develop a program to display the image using matplotlib.<br>**
 import matplotlib.image as mping <br>
 import matplotlib.pyplot as plt <br>
 img=mping.imread('rose2.jpg') <br>
@@ -18,7 +18,7 @@ plt.imshow(img) <br>
 OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/175273562-5e5c9e46-c75a-424f-9831-ced1e9dc57bf.png)
 <br>
-3.Develop a program to perform linear transformation.<br>
+**3.Develop a program to perform linear transformation.<br>**
     i)Rotation<br>
     ii)Scalling<br>
 import cv2<br>
@@ -32,7 +32,7 @@ OUTPUT:<br>
   ![image](https://user-images.githubusercontent.com/97940468/175281528-ae192b0c-596f-4194-942d-1dc6c92e8366.png)
 <br>
 
-4.Develop a program to convert color string to RGB color values.<br>
+**4.Develop a program to convert color string to RGB color values.<br>**
 
 from PIL import ImageColor<br>
 img1=ImageColor.getrgb("yellow")<br>
@@ -46,7 +46,7 @@ OUTPUT:<br>
 (255, 0, 0)<br>
 (255, 192, 203)<br>
 
-5.Write a program to create image using colors spaces.<br>
+**5.Write a program to create image using colors spaces.<br>**
 from PIL import Image<br>
 img=Image.new('RGB',(200,400),(255,255,0))<br>
 img.show()<br>
@@ -420,8 +420,8 @@ OUTPUT:<br>
     iii)Display the original image and grayscale image<br>
 
 import cv2<br>
-OriginalImg=cv2.imread('c1.jpg')<br>
-GrayImg=cv2.imread('c1.jpg',0)<br>
+OriginalImg=cv2.imread('j1.jpg')<br>
+GrayImg=cv2.imread('j1.jpg',0)<br>
 isSaved=cv2.imwrite('C:\Sadika\img2.jpg',GrayImg)<br>
 cv2.imshow('Display original Image',OriginalImg)<br>
 cv2.imshow('Display Grayscale Image',GrayImg)<br>
@@ -431,8 +431,9 @@ if isSaved:<br>
     print('The image is successfully saved!')<br>
 
 OUTPUT:<br>
-![image](https://user-images.githubusercontent.com/97940468/178709732-6e51e3cf-fb33-488a-ae7c-96c3320c103e.png)<br>
-![image](https://user-images.githubusercontent.com/97940468/178709797-e92a06d2-f711-4f1d-a2d7-08fd2a65bda9.png)<br>
+The Image Is Successfully saved<br>
+![image](https://user-images.githubusercontent.com/97940468/179492874-d57f75a7-f995-49db-8c0f-f2ba288bcb0d.png)<br>
+![image](https://user-images.githubusercontent.com/97940468/179493032-60de268e-78ea-42f4-8c78-eab354701b7d.png)<br>
 
 20.Slicing with background<br>
 import cv2<br>
