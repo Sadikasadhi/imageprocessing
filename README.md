@@ -595,7 +595,8 @@ sharp.show()<br>
 plt.imshow(sharp)<br>
 plt.show()<br>
 
-    ![image](https://user-images.githubusercontent.com/97940468/179962214-18511d4c-45eb-4b68-9df0-2ae74f278fe0.png)<br>
+   ![image](https://user-images.githubusercontent.com/97940468/179963415-07da3498-b91b-4caa-a880-9b83e6ba245d.png)
+<br>
     
 **#Image flip**
 import matplotlib.pyplot as plt<br>
