@@ -614,6 +614,7 @@ plt.show()<br>
   ![image](https://user-images.githubusercontent.com/97940468/179962585-c788ed5b-5ff5-4a29-8d72-81f89b8fde37.png)<br>
   ![image](https://user-images.githubusercontent.com/97940468/179962687-1e677351-7997-4569-a5e7-35f8ab5832cb.png)<br>
   
+**#image Crop<br>**  
 #Importing Image class from PIL module<br>
 from PIL import Image<br>
 import matplotlib.pyplot as plt<br>
