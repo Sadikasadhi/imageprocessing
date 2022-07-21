@@ -435,7 +435,8 @@ if isSaved:<br>
 ![image](https://user-images.githubusercontent.com/97940468/179492874-d57f75a7-f995-49db-8c0f-f2ba288bcb0d.png)<br>
 ![image](https://user-images.githubusercontent.com/97940468/179493032-60de268e-78ea-42f4-8c78-eab354701b7d.png)<br>
 
-The Image Is Successfully saved<br>
+**The Image Is Successfully saved<br>**
+
 ![image](https://user-images.githubusercontent.com/97940468/180201210-66107bfa-e52c-40c5-bb58-ccbf098b0fdd.png)<br>
 
 
