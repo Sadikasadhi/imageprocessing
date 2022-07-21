@@ -422,7 +422,7 @@ cv2.waitKey(0)<br>
 import cv2<br>
 OriginalImg=cv2.imread('j1.jpg')<br>
 GrayImg=cv2.imread('j1.jpg',0)<br>
-isSaved=cv2.imwrite('C:\Sadika\img2.jpg',GrayImg)<br>
+isSaved=cv2.imwrite('C:\Sadhi\img2.jpg',GrayImg)<br>
 cv2.imshow('Display original Image',OriginalImg)<br>
 cv2.imshow('Display Grayscale Image',GrayImg)<br>
 cv2.waitKey(0)<br>
@@ -431,9 +431,13 @@ if isSaved:<br>
     print('The image is successfully saved!')<br>
 
 **OUTPUT:<br>**
-The Image Is Successfully saved<br>
+
 ![image](https://user-images.githubusercontent.com/97940468/179492874-d57f75a7-f995-49db-8c0f-f2ba288bcb0d.png)<br>
 ![image](https://user-images.githubusercontent.com/97940468/179493032-60de268e-78ea-42f4-8c78-eab354701b7d.png)<br>
+
+The Image Is Successfully saved<br>
+![image](https://user-images.githubusercontent.com/97940468/180201210-66107bfa-e52c-40c5-bb58-ccbf098b0fdd.png)<br>
+
 
 **20.Slicing with background<br>**
 import cv2<br>
