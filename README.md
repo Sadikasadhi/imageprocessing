@@ -521,12 +521,12 @@ plt.show()<br>
     b) Log transformation<br>
     c) Gamma correction<br>**
     
-%matplotlib inline<br>
+#%matplotlib inline<br>
 import imageio<br>
 import matplotlib.pyplot as plt<br>
-import warnings<br>
-import matplotlib.cbook<br>
-warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)<br>
+#import warnings<br>
+#import matplotlib.cbook<br>
+#warnings.filterwarnings("ignore",category=matplotlib.cbook.mplDeprecation)<br>
 pic=imageio.imread('c5.jpg')<br>
 plt.figure(figsize=(6,6))<br>
 plt.imshow(pic);<br>
@@ -587,6 +587,8 @@ import matplotlib.pyplot as plt<br>
 
 #Load the image<br>
 my_image=Image.open('cat.jpg')<br>
+plt.imshow(my_image)<br>
+plt.show()<br>
 #Use sharpen function<br>
 sharp=my_image.filter(ImageFilter.SHARPEN)<br>
 #Save the image<br>
