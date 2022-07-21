@@ -592,7 +592,7 @@ plt.show()<br>
 #Use sharpen function<br>
 sharp=my_image.filter(ImageFilter.SHARPEN)<br>
 #Save the image<br>
-sharp.save('C:\Sadika\Image_sharpen.jpg')<br>
+sharp.save('C:\Sadhi\Image_sharpen.jpg')<br>
 sharp.show()<br>
 plt.imshow(sharp)<br>
 plt.show()<br>
@@ -600,7 +600,9 @@ plt.show()<br>
 ![image](https://user-images.githubusercontent.com/97940468/180195907-cbb8998c-e979-44df-9104-d0ca4a1a3b75.png)<br>
 ![image](https://user-images.githubusercontent.com/97940468/180195987-2d7ed65e-1860-495e-afa7-15dc878e5d33.png)<br>
 
-    
+![image](https://user-images.githubusercontent.com/97940468/180198812-31bb2fc4-d520-4c94-b014-e9952d0a243e.png)
+<br>
+ 
 **#Image flip<br>**
 import matplotlib.pyplot as plt<br>
 #load the image<br>
@@ -611,12 +613,15 @@ plt.show()<br>
 flip=img.transpose(Image.FLIP_LEFT_RIGHT)<br>
 
 #save the image<br>
-flip.save('C:\Sadika\Image_flip.jpg')<br>
+flip.save('C:\Sadhi\Image_flip.jpg')<br>
 plt.imshow(flip)<br>
 plt.show()<br>   
 
   ![image](https://user-images.githubusercontent.com/97940468/179962585-c788ed5b-5ff5-4a29-8d72-81f89b8fde37.png)<br>
   ![image](https://user-images.githubusercontent.com/97940468/179962687-1e677351-7997-4569-a5e7-35f8ab5832cb.png)<br>
+  ![image](https://user-images.githubusercontent.com/97940468/180198933-9f5ecee8-2e9e-4c12-ae3d-998ecb092f72.png)
+
+ 
   
 **#Image Crop<br>**  
 #Importing Image class from PIL module<br>
