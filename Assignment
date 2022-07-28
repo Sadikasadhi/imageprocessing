@@ -1,7 +1,0 @@
-**Standard deviation**<br>
-import cv2<br>
-import numpy as np<br>
-img=cv2.imread('c5.jpg')<br>
-cv2.imshow('c5.jpg',img)<br>
-cv2.waitKey(0)<br>
-np.std(img)<br>
