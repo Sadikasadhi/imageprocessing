@@ -1,4 +1,4 @@
-http://localhost:8888/notebooks/2image.ipynbhttp://localhost:8888/notebooks/2image.ipynb
+
 # imageprocessing
 
 **1.Develop a program to display grayscale image using read and Write Operations.**
