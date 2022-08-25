@@ -33,6 +33,9 @@ cv2.destroyAllWindows()<br>
   ![image](https://user-images.githubusercontent.com/97940468/175281528-ae192b0c-596f-4194-942d-1dc6c92e8366.png)
 <br>
 
+
+
+
 **4.Develop a program to convert color string to RGB color values.<br>**
 
 from PIL import ImageColor<br>
@@ -651,4 +654,100 @@ plt.show()<br>
 
 ![image](https://user-images.githubusercontent.com/97940468/179962952-9a298d43-f208-4fc7-8b90-efc91b7efb56.png)
 <br>
+__________________________________________________________________________________________
+**PILLOW FUNCTION**
+from PIL import Image, ImageChops, ImageFilter<br>
+from matplotlib import pyplot as plt<br>
+
+#Create a PIL Image objects<br>
+x=Image.open("x.png")<br>
+o=Image.open("o.png")<br>
+
+#Find out attributes of Image Objects<br>
+print('size of the image:',x.size,'colour mode:',x.mode)<br>
+print('size of the image:',o.size,'colour mode:',o.mode)<br>
+
+#plot 2 images one besides the other<br>
+plt.subplot(121),plt.imshow(x)<br>
+plt.axis('off')<br>
+plt.subplot(122),plt.imshow(o)<br>
+plt.axis('off')<br>
+
+#multiply images<br>
+merged=ImageChops.multiply(x,o)<br>
+
+#adding 2 images<br>
+add=ImageChops.add(x,o)<br>
+
+#convert colour mode<br>
+greyscale=merged.convert('L')<br>
+greyscale<br>
+
+OUTPUT:<br>
+size of the image: (256, 256) colour mode: RGB<br>
+size of the image: (256, 256) colour mode: RGB<br>
+![image](https://user-images.githubusercontent.com/97940468/186653380-14746cc1-9207-49d5-8c90-bebff8708f9f.png)<br>
+<br>
+#more Attributes<br>
+image = merged<br>
+
+print('image size:',image.size,<br>
+     '\ncolor mode:', image.mode,<br>
+    '\nimage width:',image.width, '| also represented by:', image.size[0],<br>
+     '\nimage height:',image.height, '| also represented by:', image.size[1],)<br>
+ 
+ OUTPUT:<br>    
+image size: (256, 256) <br>  
+color mode: RGB <br>  
+image width: 256 | also represented by: 256 <br>  
+image height: 256 | also represented by: 256<br>  
+
+#mapping the pixels of the image so we can use them as coord<br>  
+pixel = greyscale.load()<br> 
+
+#a nested loop to parse through all the pixels in the image<br> 
+for row in range(greyscale.size[0]):<br> 
+ for column in range(greyscale.size[1]):<br> 
+    if pixel[row,column] != (255):<br> 
+     pixel[row,column] = (0)<br> 
+greyscale   <br>          
+
+ OUTPUT:<br> 
+ ![image](https://user-images.githubusercontent.com/97940468/186653791-924954f1-22a5-4a82-8280-a75b880625b2.png)<br> 
+ 
+ #1.invert image<br> 
+invert = ImageChops.invert(greyscale)<br> 
+
+#2.invert by subtraction<br> 
+bg = Image.new('L',(256,256), color=(255))#create a new image with a solid white background<br> 
+subt = ImageChops.subtract(bg,greyscale)#subtract image from background<br> 
+
+#3.rotate<br> 
+rotate=subt.rotate(45)<br> 
+rotate<br> 
+ OUTPUT:<br> 
+ ![image](https://user-images.githubusercontent.com/97940468/186654031-f3a594b4-03d3-44ff-b6cc-8aa56e883242.png)<br>
+ #gaussian blur<br>
+blur=greyscale.filter(ImageFilter.GaussianBlur(radius=1))<br>
+
+#edge detection<br>
+edge = blur.filter(ImageFilter.FIND_EDGES)<br>
+edge<br>
+ OUTPUT:<br> 
+ ![image](https://user-images.githubusercontent.com/97940468/186654247-aa5d527f-61f5-4b18-b102-b2e371ea0f3e.png)<br>
+ 
+ 
+ #change edge colours<br>
+edge = edge.convert('RGB')<br>
+bg_red=Image.new('RGB',(256,256),color=(255,0,0))<br>
+
+filled_edge=ImageChops.darker(bg_red,edge)<br>
+filled_edge<br>
+
+OUTPUT:<br> 
+
+![image](https://user-images.githubusercontent.com/97940468/186654584-00e0ee46-6a2d-44f0-9b10-ca3c2e6057b8.png)<br> 
+
+#save image in the directory<br> 
+edge.save('processed.png')<br> 
 
