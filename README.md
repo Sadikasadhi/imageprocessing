@@ -751,6 +751,8 @@ OUTPUT:<br>
 #save image in the directory<br> 
 edge.save('processed.png')<br> 
 
+**Implement a program to perform various edge detection techniques<br>**
+**a) Canny Edge detection **<br>
 
 #Canny Edge detection<br> 
 import cv2<br> 
@@ -784,6 +786,7 @@ OUTPUT:
 ![image](https://user-images.githubusercontent.com/97940468/187900970-8e1c2f70-0c6b-404c-80f3-8b010065d594.png)
 ![image](https://user-images.githubusercontent.com/97940468/187901100-16c6025b-b985-478c-b012-f3fcfee976f4.png)
 
+**b) Edge detection schemas-the gradient(Sobel-first order derivatives)based edge detector and the Laplacian(2nd order derivative,so it is extremely sensitive to noise)based edge detector**<br>
 #LapLacian and Sobel Edge detecting methods<br> 
 import cv2<br> 
 import numpy as np<br> 
@@ -817,7 +820,7 @@ plt.show()<br>
 OUTPUT:<br> 
 ![image](https://user-images.githubusercontent.com/97940468/187901330-37d06e5d-bf06-4388-bba6-26d860bdc9f1.png)
 <br> 
-
+**c) Edge detection using Prewitt Operator** <br>
 #Edge detection using Prewitt operator<br> 
 import cv2<br> 
 import numpy as np<br> 
@@ -846,6 +849,7 @@ OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/187902241-abd81635-2785-47e7-a23b-a158522e8ea6.png)
 
 <br>
+**d) Roberts Edge Detection-Roberts cross operator**<br>
 #Roberts Edge Detection- Roberts cross operator<br>
 import cv2<br>
 import numpy as np<br>
