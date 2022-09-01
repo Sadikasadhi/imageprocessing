@@ -849,7 +849,8 @@ OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/187902241-abd81635-2785-47e7-a23b-a158522e8ea6.png)
 
 <br>
-**d) Roberts Edge Detection-Roberts cross operator **<br>
+
+**d) Roberts Edge Detection-Roberts cross operator<br>**
 
 #Roberts Edge Detection- Roberts cross operator<br>
 import cv2<br>
