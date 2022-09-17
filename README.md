@@ -876,11 +876,196 @@ OUTPUT:<br>
 ![image](https://user-images.githubusercontent.com/97940468/187902436-ebadfd95-7045-42c8-9459-bedc01bc5fab.png)<br>
 
 
+import numpy as np<br>
+import cv2<br>
+import matplotlib.pyplot as plt<br>
+
+#Open the image<br>
+img = cv2.imread('dimage_damaged.png')<br>
+plt.imshow(img)<br>
+plt.show()<br>
+
+#load the mask<br>
+mask=cv2.imread('dimage_mask.png',0)<br>
+plt.imshow(mask)<br>
+plt.show()<br>
+
+#Inpaint<br>
+dst = cv2.inpaint(img,mask,3,cv2.INPAINT_TELEA)<br>
+
+#Write the output.<br>
+cv2.imwrite('dimage_inpainted.png',dst)<br>
+plt.imshow(dst)<br>
+plt.show()<br>
+
+OUTPUT:<br>
+![download](https://user-images.githubusercontent.com/97940468/190844556-a8a96309-8acf-4622-9c14-e84ae77009c4.png)<br>
+![download](https://user-images.githubusercontent.com/97940468/190844562-892844e6-4f61-4f72-9809-70be879ecaac.png)<br>
+![download](https://user-images.githubusercontent.com/97940468/190844567-6469c739-004a-40a6-bb9a-338e98890738.png)<br>
+
+import numpy as np<br>
+import matplotlib.pyplot as plt<br>
+import pandas as pd<br>
+plt.rcParams['figure.figsize'] =(10,8)<br>
+
+def show_image(image,title='Image',cmap_type='gray'):<br>
+    plt.imshow(image,cmap=cmap_type)<br>
+    plt.title(title)<br>
+    plt.axis('off')<br>
+    
+def plot_comparison(img_original,img_filtered,img_title_filtered):<br>
+    fig,(ax1,ax2)=plt.subplots(ncols=2, figsize=(10,8), sharex=True, sharey=True)<br>
+    ax1.imshow(img_original,cmap=plt.cm.gray)<br>
+    ax1.set_title('Original')<br>
+    ax1.axis('off')<br>
+    ax2.imshow(img_filtered,cmap=plt.cm.gray)<br>
+    ax2.set_title('img_title_filtered')<br>
+    ax2.axis('off')<br>
+    
+from skimage.restoration import inpaint<br>
+from skimage.transform import resize<br>
+from skimage import color<br>
+
+image_with_logo=plt.imread('imlogo.png')<br>
+
+#Initialize the mask<br>
+mask=np.zeros(image_with_logo.shape[:-1])<br>
+
+#Set the pixels where the Logo is to  1<br>
+mask[210:272, 360:425] = 1<br>
+
+#Apply inpainting to remove the Logo<br>
+image_logo_removed = inpaint.inpaint_biharmonic(image_with_logo,<br>
+                                              mask,<br>
+                                              multichannel=True)<br>
+
+#show the original and Logo removed images<br>
+plot_comparison(image_with_logo,image_logo_removed,'Image with logo removed')<br>
 
 
+OUTPUT:<br>
+![download](https://user-images.githubusercontent.com/97940468/190844700-c90a55d5-4ce6-4cb2-a5ad-861d100ec16d.png)<br>
 
 
+from skimage.util import random_noise<br>
+
+fruit_image=plt.imread('fruits.jpg')<br>
+
+#add noise to the image<br>
+noisy_image=random_noise(fruit_image)<br>
+
+#Show the original and resulting image<br>
+plot_comparison(fruit_image, noisy_image, 'Noisy image')<br>
+
+OUTPUT:<br>
+![download](https://user-images.githubusercontent.com/97940468/190844774-1ec064ca-5715-4078-8db9-e4215fb8085c.png)<br>
+
+from skimage.restoration import denoise_tv_chambolle<br>
+
+noisy_image=plt.imread('noisy.jpg')<br>
+
+#Apply total variation filter denoising<br>
+denoised_image=denoise_tv_chambolle(noisy_image,multichannel=True)<br>
+
+#show the noisy and denopised image<br>
+plot_comparison(noisy_image,denoised_image,'Denoised Image')<br>
+
+OUTPUT:<br>
+![download](https://user-images.githubusercontent.com/97940468/190844810-ceefaf3a-12d9-4385-8175-a198d5188e2b.png)
 
 
+from skimage.restoration import denoise_bilateral<br>
 
+landscape_image=plt.imread('noisy.jpg')<br>
+
+#Apply bilateral filter denoising<br>
+denoised_image=denoise_bilateral(landscape_image,multichannel=True)<br>
+
+#Show original and resulting images<br>
+plot_comparison(landscape_image, denoised_image,'Denoised Image')<br>
+
+
+OUTPUT:<br>
+![download](https://user-images.githubusercontent.com/97940468/190844844-dd994cf8-ed1a-4e74-9065-8fb3d4661fa3.png)<br>
+
+from skimage.segmentation import slic<br>
+from skimage.color import label2rgb<br>
+import matplotlib.pyplot as plt<br>
+import numpy as np<br>
+face_image = plt.imread('face.jpg')<br>
+segments = slic(face_image, n_segments=400)<br>
+segmented_image=label2rgb(segments,face_image,kind='avg')<br>
+plt.imshow(face_image)<br>
+plt.show()<br>
+plt.imshow((segmented_image * 1).astype(np.uint8))<br>
+plt.show()<br>
+
+OUTPUT:<br>
+![download](https://user-images.githubusercontent.com/97940468/190844878-1ac3ef79-fe8c-4a5c-8a56-973d312c137e.png)<br>
+![download](https://user-images.githubusercontent.com/97940468/190844889-094d27e1-24e7-4ca5-a1fb-6fa05b08ffbc.png)<br>
+
+def show_image_contour(image,contours):<br>
+    plt.figure()<br>
+    for n, contour in enumerate(contours):<br>
+        plt.plot(contour[:,1], contour[:,0],linewidth=3)<br>
+    plt.imshow(image,interpolation='nearest',cmap='gray_r')<br>
+    plt.title('Contours')<br>
+    plt.axis('off')<br>
+    
+    
+from skimage import measure, data<br>
+
+#obtain the horse image<br>
+horse_image=data.horse()<br>
+
+#Find the contours with a constant level value of 0.8<br>
+contours=measure.find_contours(horse_image,level=0.8)<br>
+
+#Shows the image with contours found<br>
+show_image_contour(horse_image,contours)  <br>
+    
+OUTPUT:<br>
+![download](https://user-images.githubusercontent.com/97940468/190844948-454e22ad-b0e2-4603-b89f-ff569d8ee07e.png)<br>
+
+from skimage.io import imread <br>
+from skimage.filters import threshold_otsu <br>
+
+image_dices=imread('diceimg.png') <br>
+
+#make the image grayscale <br>
+image_dices=color.rgb2gray(image_dices) <br>
+
+#Obtain the optimal thresh value <br>
+thresh=threshold_otsu(image_dices) <br>
+
+#Apply threshholding <br>
+binary=image_dices > thresh <br>
+
+#Find contours at aconstant value of 0.8 <br>
+contours=measure.find_contours(binary,level=0.8) <br>
+
+#Show the image <br>
+show_image_contour(image_dices, contours) <br>
+
+OUTPUT:<br>
+![download](https://user-images.githubusercontent.com/97940468/190844985-9c486bca-8a2b-438d-b6c3-844bc628adac.png)<br>
+
+#Create list with the shape of each contour<br>
+shape_contours=[cnt.shape[0] for cnt in contours]<br>
+
+#Set 50 as the maximum sixe of the dots shape<br>
+max_dots_shape=50<br>
+
+#Count dots in contours excluding bigger then dots size<br>
+dots_contours=[cnt for cnt in contours if np.shape(cnt)[0]<max_dots_shape]<br>
+
+#Shows all contours found<br>
+show_image_contour(binary, contours)<br>
+
+#Print the dice's number<br>
+print('Dices dots number:{}.'.format(len(dots_contours)))<br>
+
+OUTPUT:<br>
+Dices dots number:21.<br>
+![download](https://user-images.githubusercontent.com/97940468/190845017-25e8abb4-32b9-447f-86de-17b8a4cd28ed.png)<br>
 
